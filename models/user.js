@@ -20,6 +20,6 @@ const UsirSchema = new Schema({
 });
 
 const Usir = models.Usir || model("Usir", UsirSchema);
-// to enhance reusability, check models and see if Usir model is still in memory or not (Usir because collides with hotel booing)
+// to enhance reusability, check models and see if Usir model is still in memory or not (Usir because collides with hotel booking)
 
 export default Usir;

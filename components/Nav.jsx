@@ -57,7 +57,6 @@ const Nav = () => {
           </div>
         ) : (
           <>
-            {/* WHAT DO PROVIDERS DO????? */}
             {providers &&
               Object.values(providers).map((provider) => (
                 <button

@@ -13,7 +13,6 @@ export const GET = async (request) => {
             for (let prompt of prompts) {
                 const user = await Usir.findById(prompt.creator);
                 if (user) {
-                    console.log(user);
                     prompt.creator = user; // Append user data to the creator field of the prompt
                 }
             }
@@ -22,7 +21,6 @@ export const GET = async (request) => {
 
         // Call attach function properly and await its result
         const updatedPrompts = await attach(prompts);
-        console.log(updatedPrompts);
         return new Response(JSON.stringify(updatedPrompts), { status: 200 });
     } catch (error) {
         console.error("Failed to fetch all prompts", error);

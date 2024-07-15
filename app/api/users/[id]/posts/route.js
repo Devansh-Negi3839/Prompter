@@ -12,7 +12,6 @@ export const GET = async (request,{params}) => {
         for (let prompt of prompts) {
             const user = await Usir.findById(prompt.creator);
             if (user) {
-                console.log(user);
                 prompt.creator = user; // Append user data to the creator field of the prompt
             }
             else{
@@ -20,7 +19,6 @@ export const GET = async (request,{params}) => {
             }
         }
 
-        console.log("List of prompts in /api/users/[id]/posts",prompts);
         return new Response(JSON.stringify(prompts), { status: 200 });
     } catch (error) {
         console.error("Failed to fetch all prompts", error);
